@@ -13,6 +13,8 @@ class MainViewModel: ObservableObject {
         getRequest()
         
         postRequest()
+        
+        //jsonRequest()
     }
     
     private func getRequest() {
@@ -74,15 +76,16 @@ class MainViewModel: ObservableObject {
             "status": "active"
         ]
         
-        let resultData = try! JSONSerialization.data(withJSONObject: parameters)
-        let paramJson = String(data: resultData, encoding: .utf8)!
+        let paramJson = try! JSONSerialization.data(withJSONObject: parameters)
+        let paramJsonString = String(data: paramJson, encoding: .utf8)!
+        
+        CoolLog.d(paramJsonString)
         
         var request = URLRequest(url: URL(string: "https://gorest.co.in/public/v2/users")!, timeoutInterval: .infinity)
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("Bearer 32374139667788b279feb06c447dfcc2e6a01a2484b1b3608ea12af2334088a6", forHTTPHeaderField: "Authorization")
+        request.allHTTPHeaderFields = headers
         
         request.httpMethod = HTTPMethod.post.rawValue
-        request.httpBody = paramJson.data(using: .utf8)
+        request.httpBody = paramJson
         
         Alamofire.request(request)
             .responseJSON { response in
