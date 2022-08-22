@@ -118,9 +118,6 @@ class CoolLog {
     ///   - column: Column number of the log message
     ///   - funcName: Name of the function from where the logging is done
     class func e(_ object: Any, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
-        if isLoggingEnabled {
-            print("\(Date().toString()) \(LogEvent.e.rawValue)[\(sourceFileName(filePath: filename))]:\(line):\(column) \(funcName) -> \(object)")
-        }
         printLog(type: LogEvent.e, object, filename: filename, line: line, column: column, funcName: funcName)
     }
     
