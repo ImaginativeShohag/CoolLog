@@ -1,5 +1,8 @@
 //
-//  Copyright © 2022 Apple Inc. All rights reserved.
+//  CoolLog.swift
+//  CoolLog
+//
+//  Created by Md. Mahmudul Hasan Shohag on 22/8/22.
 //
 
 import Foundation

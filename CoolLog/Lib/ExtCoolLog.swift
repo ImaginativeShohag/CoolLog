@@ -1,5 +1,8 @@
 //
-//  Copyright © 2022 Apple Inc. All rights reserved.
+//  ExtCoolLog.swift
+//  CoolLog
+//
+//  Created by Md. Mahmudul Hasan Shohag on 22/8/22.
 //
 
 import Alamofire
@@ -7,7 +10,39 @@ import Foundation
 
 extension CoolLog {
     class func logAlamofire(_ response: DefaultDataResponse, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
-        if let data = response.data, let responseText = String(data: data, encoding: .utf8), let request = response.request, let response = response.response {
+        processAndLogAlamofire(
+            data: response.data,
+            request: response.request,
+            response: response.response,
+            filename: filename,
+            line: line,
+            column: column,
+            funcName: funcName
+        )
+    }
+
+    class func logAlamofire(_ response: DataResponse<Any>, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        processAndLogAlamofire(
+            data: response.data,
+            request: response.request,
+            response: response.response,
+            filename: filename,
+            line: line,
+            column: column,
+            funcName: funcName
+        )
+    }
+
+    private class func processAndLogAlamofire(
+        data: Data?,
+        request: URLRequest?,
+        response: HTTPURLResponse?,
+        filename: String = #file,
+        line: Int = #line,
+        column: Int = #column,
+        funcName: String = #function
+    ) {
+        if let data = data, let responseText = String(data: data, encoding: .utf8), let request = request, let response = response {
             var message = "\(request.httpMethod ?? "") \(response.statusCode) \(request.url?.description ?? "")\n"
 
             if let headers = request.allHTTPHeaderFields, !headers.isEmpty {
