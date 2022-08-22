@@ -10,11 +10,22 @@ import Foundation
 
 class MainViewModel: ObservableObject {
     func callApis() {
+        logExamples()
+        
         getRequest()
         
         postRequest()
         
         //jsonRequest()
+    }
+    
+    private func logExamples() {
+        CoolLog.v("Verbose log")
+        CoolLog.d("Debug log")
+        CoolLog.i("Info log")
+        CoolLog.e("Error log")
+        CoolLog.w("Warning log")
+        CoolLog.c("Critical log")
     }
     
     private func getRequest() {
@@ -63,7 +74,6 @@ class MainViewModel: ObservableObject {
     }
     
     private func jsonRequest() {
-        
         let headers = [
             "Accept": "application/json",
             "Authorization": "Bearer 32374139667788b279feb06c447dfcc2e6a01a2484b1b3608ea12af2334088a6"
