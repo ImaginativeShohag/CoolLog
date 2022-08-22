@@ -6,7 +6,6 @@ import Alamofire
 import Foundation
 
 extension CoolLog {
-    
     class func logAlamofire(_ response: DefaultDataResponse, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
         if let data = response.data, let responseText = String(data: data, encoding: .utf8), let request = response.request, let response = response.response {
             var message = "\(request.httpMethod ?? "") \(response.statusCode) \(request.url?.description ?? "")\n"
