@@ -7,6 +7,7 @@
 
 import Alamofire
 import Foundation
+import UIKit
 
 class MainViewModel: ObservableObject {
     let session = Session(eventMonitors: [AlamofireLogger()])
@@ -15,10 +16,12 @@ class MainViewModel: ObservableObject {
         logExamples()
         
         getRequest()
-        
+
         postRequest()
-        
+
         jsonRequest()
+        
+        uploadRequest()
     }
     
     private func logExamples() {
@@ -90,6 +93,16 @@ class MainViewModel: ObservableObject {
             parameters: parameters,
             encoding: JSONEncoding.default,
             headers: headers
+        )
+        .resume()
+    }
+    
+    private func uploadRequest() {
+        let image = UIImage(systemName: "star")!
+    
+        session.upload(
+            image.pngData()!,
+            to: "https://httpbin.org/post"
         )
         .resume()
     }
