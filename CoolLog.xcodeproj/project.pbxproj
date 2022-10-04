@@ -8,24 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		455BFB4028B3C5D000EB82CC /* CoolLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BFB3F28B3C5D000EB82CC /* CoolLogApp.swift */; };
-		455BFB4228B3C5D000EB82CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BFB4128B3C5D000EB82CC /* ContentView.swift */; };
+		455BFB4228B3C5D000EB82CC /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BFB4128B3C5D000EB82CC /* MainScreen.swift */; };
 		455BFB4428B3C5D300EB82CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455BFB4328B3C5D300EB82CC /* Assets.xcassets */; };
 		455BFB4728B3C5D300EB82CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455BFB4628B3C5D300EB82CC /* Preview Assets.xcassets */; };
 		455BFB4F28B3C61C00EB82CC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 455BFB4E28B3C61C00EB82CC /* Alamofire */; };
 		455BFB5128B3C62E00EB82CC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BFB5028B3C62E00EB82CC /* MainViewModel.swift */; };
 		455BFB5428B3C67B00EB82CC /* CoolLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BFB5328B3C67B00EB82CC /* CoolLog.swift */; };
-		455BFB5628B3C68900EB82CC /* ExtCoolLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BFB5528B3C68900EB82CC /* ExtCoolLog.swift */; };
+		455BFB5628B3C68900EB82CC /* AlamofireLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BFB5528B3C68900EB82CC /* AlamofireLogger.swift */; };
+		45679B0328B50B450083A08D /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45679B0228B50B450083A08D /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		455BFB3C28B3C5D000EB82CC /* CoolLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		455BFB3F28B3C5D000EB82CC /* CoolLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolLogApp.swift; sourceTree = "<group>"; };
-		455BFB4128B3C5D000EB82CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		455BFB4128B3C5D000EB82CC /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		455BFB4328B3C5D300EB82CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		455BFB4628B3C5D300EB82CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		455BFB5028B3C62E00EB82CC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		455BFB5328B3C67B00EB82CC /* CoolLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolLog.swift; sourceTree = "<group>"; };
-		455BFB5528B3C68900EB82CC /* ExtCoolLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtCoolLog.swift; sourceTree = "<group>"; };
+		455BFB5528B3C68900EB82CC /* AlamofireLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireLogger.swift; sourceTree = "<group>"; };
+		45679B0228B50B450083A08D /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +61,12 @@
 		455BFB3E28B3C5D000EB82CC /* CoolLog */ = {
 			isa = PBXGroup;
 			children = (
+				45833A2928EC971D00041249 /* Sample */,
+				45833A2828EC890400041249 /* Utils */,
 				455BFB5228B3C65F00EB82CC /* Lib */,
 				455BFB3F28B3C5D000EB82CC /* CoolLogApp.swift */,
-				455BFB4128B3C5D000EB82CC /* ContentView.swift */,
 				455BFB4328B3C5D300EB82CC /* Assets.xcassets */,
 				455BFB4528B3C5D300EB82CC /* Preview Content */,
-				455BFB5028B3C62E00EB82CC /* MainViewModel.swift */,
 			);
 			path = CoolLog;
 			sourceTree = "<group>";
@@ -81,9 +83,50 @@
 			isa = PBXGroup;
 			children = (
 				455BFB5328B3C67B00EB82CC /* CoolLog.swift */,
-				455BFB5528B3C68900EB82CC /* ExtCoolLog.swift */,
 			);
 			path = Lib;
+			sourceTree = "<group>";
+		};
+		45679B0128B50AC40083A08D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				45679B0228B50B450083A08D /* Users.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		45833A2828EC890400041249 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				455BFB5528B3C68900EB82CC /* AlamofireLogger.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		45833A2928EC971D00041249 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				45833A2B28EC973900041249 /* ViewModel */,
+				45833A2A28EC973000041249 /* View */,
+				45679B0128B50AC40083A08D /* Models */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		45833A2A28EC973000041249 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				455BFB4128B3C5D000EB82CC /* MainScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45833A2B28EC973900041249 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				455BFB5028B3C62E00EB82CC /* MainViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,10 +205,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				455BFB5628B3C68900EB82CC /* ExtCoolLog.swift in Sources */,
-				455BFB4228B3C5D000EB82CC /* ContentView.swift in Sources */,
+				455BFB5628B3C68900EB82CC /* AlamofireLogger.swift in Sources */,
+				455BFB4228B3C5D000EB82CC /* MainScreen.swift in Sources */,
 				455BFB4028B3C5D000EB82CC /* CoolLogApp.swift in Sources */,
 				455BFB5128B3C62E00EB82CC /* MainViewModel.swift in Sources */,
+				45679B0328B50B450083A08D /* Users.swift in Sources */,
 				455BFB5428B3C67B00EB82CC /* CoolLog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,7 +351,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.220822;
+				MARKETING_VERSION = 0.2.220823;
 				PRODUCT_BUNDLE_IDENTIFIER = org.imaginativeworld.CoolLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -336,7 +380,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.220822;
+				MARKETING_VERSION = 0.2.220823;
 				PRODUCT_BUNDLE_IDENTIFIER = org.imaginativeworld.CoolLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -374,7 +418,7 @@
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

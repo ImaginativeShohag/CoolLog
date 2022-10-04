@@ -73,7 +73,7 @@ class CoolLog {
     
     // MARK: - Logging methods
     
-    /// Logs messages verbosely on console with prefix.
+    /// Logs messages verbosely on console with prefix [💬].
     ///
     /// - Parameters:
     ///   - object: Object or message to be logged
@@ -85,7 +85,7 @@ class CoolLog {
         printLog(type: LogEvent.v, object, filename: filename, line: line, column: column, funcName: funcName)
     }
     
-    /// Logs debug messages on console with prefix.
+    /// Logs debug messages on console with prefix [🐞].
     ///
     /// - Parameters:
     ///   - object: Object or message to be logged
@@ -97,7 +97,7 @@ class CoolLog {
         printLog(type: LogEvent.d, object, filename: filename, line: line, column: column, funcName: funcName)
     }
     
-    /// Logs info messages on console with prefix.
+    /// Logs info messages on console with prefix [ℹ️].
     ///
     /// - Parameters:
     ///   - object: Object or message to be logged
@@ -109,7 +109,7 @@ class CoolLog {
         printLog(type: LogEvent.i, object, filename: filename, line: line, column: column, funcName: funcName)
     }
     
-    /// Logs error messages on console with prefix.
+    /// Logs error messages on console with prefix [‼️].
     ///
     /// - Parameters:
     ///   - object: Object or message to be logged
@@ -121,7 +121,7 @@ class CoolLog {
         printLog(type: LogEvent.e, object, filename: filename, line: line, column: column, funcName: funcName)
     }
     
-    /// Logs warnings verbosely on console with prefix.
+    /// Logs warnings verbosely on console with prefix [⚠️].
     ///
     /// - Parameters:
     ///   - object: Object or message to be logged
@@ -133,7 +133,7 @@ class CoolLog {
         printLog(type: LogEvent.w, object, filename: filename, line: line, column: column, funcName: funcName)
     }
     
-    /// Logs critical events on console with prefix.
+    /// Logs critical events on console with prefix [🔥].
     ///
     /// - Parameters:
     ///   - object: Object or message to be logged
