@@ -19,7 +19,7 @@ final class AlamofireLogger: EventMonitor {
             let httpBody = request.httpBody
 
             print("================================ >>>")
-            
+
             print("\(httpMethod) '\(url)'")
 
             if !headers.isEmpty {
@@ -29,7 +29,7 @@ final class AlamofireLogger: EventMonitor {
             if let httpBody = httpBody, let parameters = String(data: httpBody, encoding: .utf8) {
                 print("Parameters: \(parameters)")
             }
-            
+
             print("================================ >>>")
         }
     }
@@ -49,7 +49,7 @@ final class AlamofireLogger: EventMonitor {
             let elapsedTime = metrics.taskInterval.duration
 
             print("<<< ================================")
-            
+
             if let error = task.error {
                 print("[Error] \(httpMethod) '\(requestURL.absoluteString)' [\(String(format: "%.04f", elapsedTime)) s]")
 

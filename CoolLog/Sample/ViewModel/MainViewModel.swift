@@ -22,6 +22,8 @@ class MainViewModel: ObservableObject {
         jsonRequest()
         
         uploadRequest()
+        
+        uploadMultiPartRequest()
     }
     
     private func logExamples() {
@@ -102,6 +104,25 @@ class MainViewModel: ObservableObject {
     
         session.upload(
             image.pngData()!,
+            to: "https://httpbin.org/post"
+        )
+        .resume()
+    }
+    
+    private func uploadMultiPartRequest() {
+        let image = UIImage(systemName: "star")!
+    
+        session.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(
+                    image.pngData()!,
+                    withName: "attachment[0]",
+                    fileName: "photo0.jpeg",
+                    mimeType: "image/jpeg"
+                )
+           
+                multipartFormData.append("extra_value".data(using: String.Encoding.utf8)!, withName: "extra_key")
+            },
             to: "https://httpbin.org/post"
         )
         .resume()
